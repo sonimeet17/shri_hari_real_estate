@@ -1,0 +1,200 @@
+{% extends 'Base_page.html' %} 
+{% block title %} | {{ properties.title }} {% endblock%}
+
+{% block content %}
+{% load humanize %}
+{% load static %}
+<!-- Here Some classes are used from display.html Page so find them -->
+
+<!-- Breadcrump Start -->
+<main>
+    <div class="breadcrump">
+        <a class="breadcrump_a" href="{% url 'display_page' %}"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" id="home_icon" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                <path fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg> Display / </a> <a class="breadcrump_a breadcrump_a_a"> &nbsp;Browse Properties / </a><a
+            class="breadcrump_a breadcrump_a_a"> &nbsp;{{ properties.title }} </a>
+    </div>
+</main>
+<!-- Breadcrimp End -->
+
+
+<!-- alerts -->
+<div class="property_details_errors">
+    {% include 'common_things_in_pages/_alerts.html' %}
+</div>
+<!-- alerts end -->
+
+
+<!-- back to property btn start -->
+<main>
+    <div class="back_to_property">
+        <a href="{% url 'properties' %}" class="back_to_property_a breadcrump_a"> Back To Properties </a>
+    </div>
+</main>
+<!-- back to property btn end -->
+
+<!-- property title start -->
+<main>
+    <div class="property_title_start">
+        <p class="Letest_properties_p property_details_title_p"> {{ properties.title }} </p>
+        <p class="Letest_properties_p property_details_address"> {{properties.address}}, {{properties.city}}, {{properties.state}} </p>
+    </div> 
+</main>
+<!-- property title end -->
+
+
+
+<!-- Properties details start -->
+<main>
+    <div class="display_detail_properties_div">
+        <div class="details_first_part">
+            <div class="details_main_image">
+                <img src="{{ properties.photo_main.url }}" alt="Image Not Found" class="img-main img-fluid">
+            </div>
+            <div class="small_images">
+                {% if properties.photo_1 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_1.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_1.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+                {% if properties.photo_2 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_2.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_2.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+                {% if properties.photo_3 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_3.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_3.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+                {% if properties.photo_4 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_4.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_4.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+                {% if properties.photo_5 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_5.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_5.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+                {% if properties.photo_6 %}
+                <div class="small_image_inner_div">
+                    <a href="{{ properties.photo_6.url }}" data-lightbox="home-images"> <img src="{{ properties.photo_6.url }}" class="img-fluid"></a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="details_second_part">
+            <div class="property_details_written">
+                <a class="property_details_written_1"> Asking Price: </a>
+                <a class="property_details_written_1"> Square Feet: </a>
+                <a class="property_details_written_1"> Lot Size: </a>
+                <a class="property_details_written_1"> Bedrooms: </a>
+                <a class="property_details_written_1"> Bathrooms: </a>
+                <a class="property_details_written_1"> Garage: </a>
+                <a class="property_details_written_1"> Listing Date: </a>
+                <a class="property_details_written_1"> Realtor: </a>     
+                <!-- <div class="fdf"> </div>                -->
+            </div>
+            <div class="property_details_written">
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.price | intcomma }} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.sqft}} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.lot_size}} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.bedrooms}} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.bathrooms}} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.garage}} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.list_date }} </a>
+                <a class="property_details_written_1 property_details_writtten_2"> {{ properties.realtor}} </a>                    
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Properties details end -->
+
+
+<!-- Property realtor start -->
+<main>
+    <div class="property_details_realtor_div">
+        <div class="poprerty_realtor_img_div">
+            <img class="property_Details_realtor_img" src="{{ properties.realtor.photo.url }}" alt="image not found">
+        </div>
+        
+        <p class="member_name property_realtor_p"> Property Realtor </p>
+        <p class="member_name  property_realtor_p_1"> {{properties.realtor}} </p>
+        <div class="back_to_property make_an_inquiry">
+            <button type="button" class="btn back_to_property_a breadcrump_a make_an_inquiry_p" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Make An Inquiry
+            </button>
+        </div>
+    </div>
+</main>
+<!-- Property realtor end -->
+
+
+<!-- Property details description start -->
+<main>
+    <div class="property_details_description_div">
+        <p class="property_details_description_p"> {{ properties.description }} </p>
+    </div>
+</main>
+<!-- Property details description end -->
+
+
+
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content inquiry_modal_main">
+    <div class="modal-header modal_header">
+        <h5 class="modal-title modal_title" id="exampleModalLabel"> Make An Inquiry </h5>
+        <button type="button" class="btn-close modal_close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body modal_body">
+        <form action="{% url 'contacts' %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+            {% else %}  
+                <input type="hidden" name="user_id" value="0">
+            {% endif %}
+            <input type="hidden" name="realtors_email" value="{{ properties.realtor.email }}">
+            <input type="hidden" name="property_id" value="{{ properties.id }}">
+
+
+            <div class="form-group">
+                <label for="property_name" class="col-form-label modal_property">Property:</label>
+                <input type="text" name="property" class="form-control modal_property" value="{{ properties.title }}" >
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-form-label modal_property">Name:</label>
+                <input type="text" name="name" class="form-control modal_property" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %}  required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-form-label modal_property">Email:</label>
+                <input type="email" name="email" class="form-control modal_property" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-form-label modal_property">Phone:</label>
+                <input type="text" name="phone" class="form-control modal_property">
+            </div>
+            <div class="form-group">
+                <label for="message" class="col-form-label modal_property">Message:</label>
+                <textarea name="message" class="form-control modal_property"></textarea>
+            </div>
+            <hr>
+            <input class="Modal_send " type="submit" value="Send" class="btn btn-block btn-secondary">
+            </form>
+    </div>       
+    </div>
+</div>
+</div>
+
+
+</div>
+{% endblock %}

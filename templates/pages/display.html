@@ -1,0 +1,402 @@
+{% extends 'Base_page.html' %}
+{% block title %} | Welcome {% endblock %}
+{% block content %}
+{% load humanize %}
+
+
+{% load static %}
+
+<!-- Search Your Property section start -->
+<main>
+    <div class="property_search">
+        <p class="search_property_p"> Find Properties In A Minute! </p>
+        <p class="search_property_quote"> Buying a Home is keystone of wealth - both financial affluence and emotional
+            security. </p>
+
+        <form class="property_search_div" action="{% url 'search' %}">
+            <input type="text" class="input_types" name="property_type" placeholder=" &nbsp;Pool, Garage, ETC." >
+            <input type="text" class="input_types" name="city" placeholder=" &nbsp;City">
+
+            <select class="input_types" name="state">
+                <option selected="true" class="input_types" disabled="disabled"> &nbsp;States </option>
+                {% for key, value in state_choices.items %}
+                    <option class ="input_types" value="{{ key }}"> {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <select class="input_types" name="bedroom">
+                <option class="input_types" selected="true" disabled="disabled"> &nbsp;Bedrooms</option>
+                {% for key, value in bedroom_choices.items %}
+                    <option class="input_types" value="{{ key }}"> {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <select class="input_types" name="max_price">
+                <option class="input_types" selected="true" disabled="disabled"> &nbsp;Price</option>
+                {% for key, value in price_choices.items %}
+                    <option class="input_types" value="{{ key }}"> {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <button class="submit_btn" type="submit"> Go Now </button>
+        </form>
+
+    </div>
+</main>
+<!-- Search Your property section end -->
+
+
+<!-- See how we help you section start  -->
+<main>
+    <div class="how_we_help_main_div">
+        <p class="Letest_properties_p"> See How Shri Hari Helps You </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+        <div class="how_we_help_inner">
+
+            <div class="first_div">
+                <div class="first_div_image">
+                    <img class="home_image" src="{% static 'img/home.png' %}" alt="image in process">
+                </div>
+
+                <p class="first_div_p"> Buy A House </p>
+
+                <div class="first_div_sentences">
+                    <p class="first_div_sentences_p"> With over 1 million+ homes for sale available on the website, Shri
+                        Hari can match you with a house you will want to call home.</p>
+                </div>
+
+                <div class="first_div_btn_div">
+                    <a class="first_div_a" href=""> Find House </a>
+                </div>
+            </div>
+
+            <div class="first_div">
+                <div class="first_div_image">
+                    <img class="home_image" src="{% static 'img/Rent_house.png' %}" alt="image in process">
+                </div>
+
+                <p class="first_div_p"> Rent A House </p>
+
+                <div class="first_div_sentences">
+                    <p class="first_div_sentences_p"> With 35+ filters and custom keyword search, Shri Hari can help you
+                        easily find a home or apartment for rent that you'll love.</p>
+                </div>
+
+                <div class="first_div_btn_div">
+                    <a class="first_div_a" href=""> Find A Rental </a>
+                </div>
+            </div>
+
+            <div class="first_div">
+                <div class="first_div_image">
+                    <img class="home_image" src="{% static 'img/service_home.png' %}" alt="image in process">
+                </div>
+
+                <p class="first_div_p"> Consulting Services </p>
+
+                <div class="first_div_sentences">
+                    <p class="first_div_sentences_p"> With more neighborhood insights than any other real estate
+                        website, we've captured the color and diversity of communities.</p>
+                </div>
+
+                <div class="first_div_btn_div">
+                    <a class="first_div_a" href=""> Know More </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<!-- see how we help you section end -->
+
+
+<!-- Latest Property Section Start -->
+<main>
+    <div class="latest_properties_main_div">
+        <p class="Letest_properties_p"> Latest Properties </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+        <div class="owl-carousel owl-theme latest_preoperties_inner sd">
+            {% if latest_properties %}
+            {% for latest_property in latest_properties %}
+            <div class="item">
+                <div class="first_property">             
+                    <div class="first_property_image_div">
+                        <img class="first_propery_img" src="{{ latest_property.photo_main.url }}"
+                            alt="image in Process">
+                    </div>
+
+                    <p class="first_property_name"> {{ latest_property.title }} </p>
+                    <p class="first_property_address">  {{latest_property.address}}, {{latest_property.city}}, {{latest_property.state}} </p>
+
+                    <div class="first_property_features">
+                        <div class="first_property_features_one"> Sqft:<span class="first_property_features_one_span">
+                            {{latest_property.sqft}} </span> </div>
+                        <div class="first_property_features_one"> Bedrooms:<span
+                                class="first_property_features_one_span"> {{latest_property.bedrooms}}  </span> </div>
+                        <div class="first_property_features_one"> Garage:<span class="first_property_features_one_span">
+                            {{latest_property.garage}} </span> </div>
+                        <div class="first_property_features_one"> Bathrooms:<span
+                                class="first_property_features_one_span"> {{latest_property.bathrooms}} </span> </div>
+                    </div>
+
+                    <div class="first_property_price_div">
+                        <a class="First_property_price" href=""> ₹{{latest_property.price | intcomma}}\- </a>
+                    </div>
+
+                    <div class="more_info_div">
+                        <a class="more_info_a" href="{% url 'property' latest_property.id %}"> More Info </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p> No Properties Found </p>              
+            {% endif %}
+        </div>
+
+        <div class="owl-navigation first_nav">
+            <span class="owl-nav-prev prev"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                    fill="currentColor" class="bi bi-caret-left-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M10.205 12.456A.5.5 0 0 0 10.5 12V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4a.5.5 0 0 0 .537.082z" />
+                </svg> </span>
+            <span class="owl-nav-next next"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                    fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z" />
+                </svg> </span>
+        </div>
+    </div>
+    <div class="more_listings">
+        <div class="more_listings_inner">
+            <a class="more_listings_a" href="{% url 'properties' %}"> See All Properties <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" id="property_listings_icon"
+                    class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                    <path fill-rule="evenodd"
+                        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                </svg> </a>
+        </div>
+    </div>
+</main>
+<!-- Latest Property Section End-->
+
+
+<!-- Collection For You Section start -->
+<main>
+    <div class="collection_for_you">
+        <p class="Letest_properties_p"> Collection For You </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+        <div class="collection_for_you_inner">
+            <div class="first_collection">
+                <div class="first_collection_image_div">
+                    <img class="first_collection_image" src="{% static 'img/collection_img_1.png'%}"
+                        alt="image In Process">
+                </div>
+                <a href="" class="first_collection_name"> Budjet Homes </a>
+            </div>
+
+            <div class="first_collection">
+                <div class="first_collection_image_div">
+                    <img class="first_collection_image" src="{% static 'img/collection_img_2.png'%}"
+                        alt="image In Process">
+                </div>
+                <a href="" class="first_collection_name"> Luxury Homes </a>
+            </div>
+
+            <div class="first_collection">
+                <div class="first_collection_image_div">
+                    <img class="first_collection_image" src="{% static 'img/collection_img_3.png'%}"
+                        alt="image In Process">
+                </div>
+                <a class="first_collection_name"> Stylist Homes </a>
+            </div>
+
+            <div class="first_collection second_collection_div">
+                <div class="first_collection_image_div">
+                    <img class="first_collection_image" src="{% static 'img/collection_img_4.png'%}"
+                        alt="image In Process">
+                </div>
+                <a href="" class="first_collection_name"> Home Office Homes </a>
+            </div>
+
+            <div class="first_collection">
+                <div class="first_collection_image_div">
+                    <img class="first_collection_image" src="{% static 'img/collection_img_5.png'%}"
+                        alt="image In Process">
+                </div>
+                <a href="" class="first_collection_name"> Nature Homes </a>
+            </div>
+
+        </div>
+    </div>
+</main>
+<!-- Collection for You Section End -->
+
+
+<!-- Popular properties Start -->
+<main>
+    <div class="latest_properties_main_div">
+        <p class="Letest_properties_p"> Popular Properties </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+
+        <div class="owl-carousel owl-theme latest_preoperties_inner">
+            {% if popular_properties %}
+            {% for property in popular_properties %}
+            <div class="item">
+                <div class="first_property_outer_div">
+                    <div class="recently_first_property">
+                        <div class="first_property_image_div">
+                            <img class="first_propery_img" src="{{ property.photo_main.url }}"
+                                alt="image in Process">
+                        </div>
+
+                        <p class="first_property_name"> {{ property.title }} </p>
+                        <p class="first_property_address"> {{property.address}}, {{property.city}}, {{property.state}} </p>
+
+                        <div class="first_property_features">
+                            <div class="first_property_features_one"> Sqft:<span
+                                    class="first_property_features_one_span">  {{property.sqft}} </span> </div>
+                            <div class="first_property_features_one"> Bedrooms:<span
+                                    class="first_property_features_one_span">  {{property.bedrooms}} </span> </div>
+                            <div class="first_property_features_one"> Garage:<span
+                                    class="first_property_features_one_span">  {{property.garage}} </span> </div>
+                            <div class="first_property_features_one"> Bathrooms:<span
+                                    class="first_property_features_one_span"> {{property.bathrooms}} </span> </div>
+                        </div>
+
+                        <div class="first_property_price_div">
+                            <a class="First_property_price"> ₹{{property.price | intcomma}}\- </a>
+                        </div>
+
+                        <div class="first_property_price_div builder_div">
+                            <a class="builder_name"> {{property.realtor}} </a>
+                        </div>
+
+                        <div class="more_info_div">
+                            <a class="more_info_a" href="{% url 'property' property.id %}"> More Info </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p> Properties Not Found </p>
+            {% endif %}
+
+        </div>
+
+        <div class="owl-navigation">
+            <span class="owl-nav-prev"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                    fill="currentColor" class="bi bi-caret-left-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M10.205 12.456A.5.5 0 0 0 10.5 12V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4a.5.5 0 0 0 .537.082z" />
+                </svg> </span>
+            <span class="owl-nav-next"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                    fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z" />
+                </svg> </span>
+        </div>
+    </div>
+</main>
+<!-- Popular Properties End-->
+
+
+<!-- What Makes us a prefered choice Start -->
+<main>
+    <div class="what_make_us_prefered_choice">
+        <p class="Letest_properties_p"> What Makes Us The Preferred Choice </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+        <div class="what_make_us_prefered_choice_inner">
+            <div class="preferded_choice_1">
+                <div class="prefered_choice_img_div">
+                    <img class="prefered_choice_img" src="{% static 'img/prefered_choice_4.png' %}" alt="img not found">
+                </div>
+                <p class="prefered_choice_p_head"> Maximum Choices </p>
+                <p class="prefered_choice_p"> 15 Lac + & counting. New properties every hour to help buyers find the
+                    right home </p>
+            </div>
+            <div class="preferded_choice_1">
+                <div class="prefered_choice_img_div">
+                    <img class="prefered_choice_img" src="{% static 'img/prefered_choice_3.png' %}" alt="img not found">
+                </div>
+                <p class="prefered_choice_p_head"> Buyers Trust Us </p>
+                <p class="prefered_choice_p"> 12 million users visit us every month for their buying and renting needs
+                </p>
+            </div>
+            <div class="preferded_choice_1">
+                <div class="prefered_choice_img_div">
+                    <img class="prefered_choice_img" src="{% static 'img/prefered_choice_2.png' %}" alt="img not found">
+                </div>
+                <p class="prefered_choice_p_head"> Seller Prefer Us </p>
+                <p class="prefered_choice_p"> 27,000 new properties posted daily, making us the biggest platform to sell
+                    & rent properties </p>
+            </div>
+            <div class="preferded_choice_1">
+                <div class="prefered_choice_img_div">
+                    <img class="prefered_choice_img" src="{% static 'img/prefered_choice_1.png' %}" alt="img not found">
+                </div>
+                <p class="prefered_choice_p_head"> Expert Guidance </p>
+                <p class="prefered_choice_p"> Advice from the largest panel of industry experts to help you make smart
+                    property decisions </p>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- What Makes us a prefered choice End -->
+
+
+<!-- our stats Start  -->
+<main>
+    <div class="our_stats">
+        <p class="Letest_properties_p"> Our Stats </p>
+        <div class="heading_under_hr_div">
+            <i class="heading_under_hr"></i>
+        </div>
+
+        <div class="our_stats_inner">
+            <div class="property_stat_1">
+                <a class="property_number"> 30,00,000 </a>
+                <p class="property_stat_name"> Property Listings </p>
+            </div>
+            <div class="property_stat_1">
+                <a class="property_number"> 2,500 </a>
+                <p class="property_stat_name"> Listing Added Per Day </p>
+            </div>
+            <div class="property_stat_1">
+                <a class="property_number"> 5.5 M </a>
+                <p class="property_stat_name"> Visit Per Month </p>
+            </div>
+        </div>
+
+    </div>
+</main>
+<!-- our stats End  -->
+
+
+{% endblock %}

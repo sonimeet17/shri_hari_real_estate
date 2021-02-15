@@ -1,0 +1,18 @@
+.search_breadcrump{
+    margin-top: 50px;
+}
+
+.search_properties_inner{
+    border: 1px solid transparent;
+}
+.search_properties_inner{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* border: 6px solid black; */
+}
+.search_first_property{
+    width: 24%;
+    margin: 0 3% 40px 3%;
+}

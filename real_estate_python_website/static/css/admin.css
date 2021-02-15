@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+body {
+    background: #ecf0f3;
+    font-size: 10px;
+}
+
+/* Header start */
+#header{
+    background: transparent;
+    color: black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.130);
+}
+
+#branding h1{
+    border-bottom: 1px dotted rgb(13, 9, 71);
+    border-bottom-width: 2px;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: rgb(65, 12, 44);
+    text-decoration: none;
+}
+#branding h1, strong{
+    font-weight: 100;
+    color: rgb(37, 12, 65);
+}
+
+#user-tools{
+    color: black;
+    font-size: .9rem;
+    font-family: 'Baloo Tamma 2', cursive;
+    letter-spacing: 1px;
+    transition: all .7s;
+}
+#header a:link, #header a:visited {
+    color: rgba(0, 0, 0, 0.578);
+    font-size: .9rem;
+    font-family: 'Baloo Tamma 2', cursive;
+    letter-spacing: 1px;
+    transition: all .7s;
+}
+/* Header End */
+
+
+/* Breadecrump start */
+div.breadcrumbs{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    /* height: 35px; */
+    margin: 20px 0 40px 3%;
+    padding: 7px 0 7px 2%;
+    border: 5px double rgba(0, 0, 0, 0.46);
+    border-top: none;
+    border-right: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+}
+div.breadcrumbs a{
+    color: black;
+    font-size: 1rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+}
+a:hover{
+    color: black;
+}
+div.breadcrumbs a:hover{
+    color: rgba(0, 0, 0, 0.700);
+}
+/* Breadcrump End */
+
+
+/* toggle-nav-sidebar start */
+.toggle-nav-sidebar{
+    border: none;
+    background-color: #ecf0f3;
+    outline: none;
+}
+.toggle-nav-sidebar:focus{
+    background-color: #ecf0f3;
+}
+/* toggle-nav-sidebar End */
+
+
+#content h1{
+    color: black;
+    font-size: 1.2rem;
+    font-family: "Acme";
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+
+/* Change lightblue box background start */
+.module caption{
+    background-color: rgb(13, 13, 44);  
+    font-size: .8rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+}
+.module{
+    border: 1px solid rgba(0, 0, 0, 0.500);
+    background-color: #ecf0f3;
+}
+#nav-sidebar{
+    background-color: #ecf0f3;
+}
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
+    color: rgba(255, 255, 255, 0.842);
+    font-weight: normal;
+}
+th{
+    background-color: #ecf0f3;
+    border-right: none;
+}
+td{
+    background-color: #ecf0f3;
+    /* border: 1px solid rgba(0, 0, 0, 0.300); */
+    border-left: none;
+}
+a:link, a:visited {
+    color: #434c50;
+}
+/* Change lightblue box background end */
+
+
+
+/* Recently Actions Start */
+#content-related{
+    background-color: #ecf0f3;
+}
+#content-related .module h2{
+    /* background-color: f; */
+    font-size: 1rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.200);
+}
+#content-related .module h3{
+    font-size: .9rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+/* Recently Actions End */
+
+
+
+
+#changelist{
+    background-color: white;
+}
+.changelist-form-container #toolbar{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    background-color: white;
+}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+    outline: none;
+}
+
+#changelist-form .results {
+    margin: 17px 0 17px 0;
+    /* border: 1px solid rgba(0, 0, 0, 0.432); */
+}
+#changelist-form .results::-webkit-scrollbar{
+    border: 1px solid rgba(0, 0, 0, 0.493);;
+}
+#changelist-form .results::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.233);
+}
+#changelist-form .results::-webkit-scrollbar-button{
+    background-color: rgba(0, 0, 0, 0.233);
+    border: 1px solid rgba(0, 0, 0, 0.61);
+
+}   
+.text, .action-checkbox, .field-username, .field-email, .field-first_name, .field-last_name, .field-is_staff{
+    background-color: white;
+}
+
+
+#changelist-filter {
+    font-family: "karla";
+    color: black;
+}
+#changelist-filter h2 {
+    background-color: rgb(13, 13, 44);  
+    font-size: .8rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+}
+
+.field-__str__{
+    background-color: white;
+    font-size: .8rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+}

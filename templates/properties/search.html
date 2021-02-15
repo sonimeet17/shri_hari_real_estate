@@ -1,0 +1,132 @@
+{% extends 'Base_page.html' %}
+{% block title %} | Search Properties {% endblock %}
+
+{% block content %}
+{% load humanize %}
+
+
+{% load static %}
+
+<!-- Search Your Property section start -->
+<main>
+    <div class="property_search">
+
+        <form class="property_search_div" action="{% url 'search' %}">
+            <input type="text" class="input_types" name="property_type" placeholder=" &nbsp;Pool, Garage, ETC." value="{{ values.property_type }}">
+            <input type="text" class="input_types" name="city" placeholder=" &nbsp;City" value="{{ values.city }}">
+
+            <select class="input_types" name="state" >
+                <option selected="true" class="input_types" disabled="disabled"> &nbsp;States </option>
+                {% for key, value in state_choices.items %}
+                <option class="input_types" value="{{ key }}"
+                {% if key == values.state %}
+                    selected
+                {% endif %}
+                > {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <select class="input_types" name="bedroom">
+                <option class="input_types" selected="true" disabled="disabled"> &nbsp;Bedrooms</option>
+                {% for key, value in bedroom_choices.items %}
+                <option class="input_types" value="{{ key }}"
+                {% if key == values.bedroom %}
+                    selected
+                {% endif %}
+                > {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <select class="input_types" name="max_price">
+                <option class="input_types" selected="true" disabled="disabled"> &nbsp;Price</option>
+                {% for key, value in price_choices.items %}
+                <option class="input_types" value="{{ key }}"
+                {% if key == values.max_price %}
+                    selected
+                {% endif %}
+            > {{ value }} </option>
+                {% endfor %}
+            </select>
+
+            <button class="submit_btn" type="submit"> Go Now </button>
+        </form>
+
+    </div>
+</main>
+<!-- Search Your property section end -->
+
+<!-- Breadcrump Start -->
+<main>
+    <div class="breadcrump search_breadcrump">
+        <a class="breadcrump_a" href="{% url 'display_page' %}"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" id="home_icon" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                <path fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg> Display / </a> <a class="breadcrump_a breadcrump_a_a"> &nbsp;Search Results</a>
+    </div>
+</main>
+<!-- Breadcrimp End -->
+
+
+<!-- Latest Property Section Start -->
+<main>
+    <div class="latest_properties_main_div search_properties_main">
+        <div class="latest_preoperties_inner search_properties_inner">
+            {% if properties %}
+            {% for latest_property in properties %}
+
+            <div class="first_property search_first_property">
+                <div class="first_property_image_div">
+                    <img class="first_propery_img" src="{{ latest_property.photo_main.url }}" alt="image in Process">
+                </div>
+
+                <p class="first_property_name"> {{ latest_property.title }} </p>
+                <p class="first_property_address"> {{latest_property.address}}, {{latest_property.city}},
+                    {{latest_property.state}} </p>
+
+                <div class="first_property_features">
+                    <div class="first_property_features_one"> Sqft:<span class="first_property_features_one_span">
+                            {{latest_property.sqft}} </span> </div>
+                    <div class="first_property_features_one"> Bedrooms:<span class="first_property_features_one_span">
+                            {{latest_property.bedrooms}} </span> </div>
+                    <div class="first_property_features_one"> Garage:<span class="first_property_features_one_span">
+                            {{latest_property.garage}} </span> </div>
+                    <div class="first_property_features_one"> Bathrooms:<span class="first_property_features_one_span">
+                            {{latest_property.bathrooms}} </span> </div>
+                </div>
+
+                <div class="first_property_price_div">
+                    <a class="First_property_price" href=""> ₹{{latest_property.price | intcomma}}\- </a>
+                </div>
+
+                <div class="more_info_div">
+                    <a class="more_info_a" href="{% url 'property' latest_property.id %}"> More Info </a>
+                </div>
+            </div>
+
+            {% endfor %}
+            {% else %}
+            <p> No Properties Found </p>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+    <div class="more_listings">
+        <div class="more_listings_inner">
+            <a class="more_listings_a" href="{% url 'properties' %}"> See All Properties <svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    id="property_listings_icon" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                    <path fill-rule="evenodd"
+                        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                </svg> </a>
+        </div>
+    </div>
+</main>
+<!-- Latest Property Section End-->
+{% endblock %}

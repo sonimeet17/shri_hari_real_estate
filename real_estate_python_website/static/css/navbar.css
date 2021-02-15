@@ -1,0 +1,210 @@
+.blank_div{
+    height: 140px;
+    /* border: 4px solid black; */
+}
+.main_navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 29px 0px 0 0 ;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ecf0f3;
+}
+
+/* Navbar Buttons */
+.navbar_btn_div{
+    width: 30%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+}
+.navbar_btn{
+    text-decoration: none;
+    color: rgb(28, 11, 73);
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    transition: all .7s;
+}
+.navbar_btn:hover{
+    color: rgb(185, 15, 15);
+    border-bottom: 1px solid black;
+}
+.navbar_active{
+    color: rgb(185, 15, 15);
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    transition: all .7s;
+    text-decoration: none;
+}
+.navbar_active:hover{
+    color: rgb(185, 15, 15);
+}
+
+
+/* Logo And Name */
+.navbar_logo_div{
+    /* border: 1px solid black; */
+    width: 240px;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.logo_img{
+    transform: translate(-0%, -20%);
+    width: 120px;
+    /* border: 1px solid black; */
+    margin-bottom: -8px;
+}
+.logo_name{
+    text-align: center;
+    padding: 0px 8px 4px 8px;
+    border-bottom: 1px dotted rgb(13, 9, 71);
+    border-bottom-width: 2px;
+    text-transform: capitalize;
+    font-size: 1.9rem;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: rgb(65, 12, 44);
+    text-decoration: none;
+}
+
+/* Drop down btm  */
+.responsive_dropdown{
+    display: none;
+}
+
+/* Sticky navbar query */
+.sticky{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    margin: 0;
+    padding: 10px 0 10px 0;     
+    z-index: 1000;
+}
+.sticky .logo_img{
+    transform: translate(0, 0);
+    width: 90px;
+    margin: 0;
+}
+.sticky .logo_name{
+    display: none;
+}
+.sticky .navbar_btn{
+    padding-top: 10px;
+}
+.sticky .navbar_active{
+    padding-top: 10px;
+}
+/* Sticky navbar query end */
+
+
+
+@media(min-width: 835px) and (max-width: 1010px){
+    .blank_div{
+        height: 120px;
+    } 
+    .main_navbar{
+        border-bottom: transparent;
+        padding-bottom: 20px;
+    }
+    .sticky{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+    }
+    .navbar_btn{
+        font-size: 1.6rem;
+    }
+    .navbar_active{
+        font-size: 1.6rem;
+    }
+
+    .logo_img{
+        transform: translate(-0%, -20%);
+        width: 100px;
+    }
+    .logo_name{
+        font-size: 1.7rem;
+        padding: 0px 6px 4px 6px;
+    }
+}
+
+
+/* dropdown query  */
+@media(min-width: 0px) and (max-width: 835px){
+     .blank_div{
+        display: none;
+    }
+    .main_navbar{
+        display: none;
+    }
+
+    .responsive_dropdown{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ecf0f3;
+        padding: 0 2%;
+        padding: 10px 0 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+    .logo_img_responsive{
+        width: 80px;
+        /* border: 1px solid black; */
+    }
+    .dropdown_btn:focus{
+        box-shadow: none;
+    }
+    /* Drop down btm  */
+    .res_dropdown{
+        /* border: 1px solid black; */
+        display: inline-block;
+        margin-right: 1%;
+    }
+    .drop_down_list{
+        animation-name: dropdown;
+        animation-duration: .7s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        background-color: #ecf0f3;
+        background-color: rgba(0, 0, 0, 0.85);
+        border: 1px solid black;
+        /* height: 100vh; */
+    }
+    @keyframes dropdown{
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 320px;
+        }
+
+    }
+    .nav_btn_resp{
+        color: #ecf0f3;
+        text-align: center;
+        font-size: 1.7rem;
+        font-family: 'Karla';
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin: 20px 0 20px 0; */
+        /* border: 1px solid black; */
+        padding: 0 30px;
+    }
+    .nav_btn_resp:hover{
+        color: #c7d8e6;;
+        background-color: transparent;
+    }
+}

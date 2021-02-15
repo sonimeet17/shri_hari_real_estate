@@ -1,0 +1,304 @@
+
+/* Footer Start */
+.footer_1{
+    margin: 50px 0 0 0;
+    border-top: 3px solid black;
+    padding: 50px 0 0 0;
+    /* border: 1px solid black; */
+}
+.footer_inner{
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.footer_about{
+    /* border: 1px solid black; */
+    width: 45%;
+    padding: 0 50px 0 0;
+}
+.footer_about_heading{
+    font-size: 2.1rem;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: black;
+    text-transform: uppercase;
+}
+.footer_about_patagraph{
+    font-size: 1.4rem;
+    font-family: "Karla";
+    line-height: 22px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer_social_icon{
+    width: 45%;
+    padding: 0 0 0 3%;
+    /* border: 1px solid black; */
+}
+.social_media{
+    border: transparent;
+    /* border: 1px solid black; */
+}
+.social_media_p{
+    font-size: 1.8rem;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: black;
+    text-transform: uppercase;
+}
+.social_media_icon{
+    width: 58%;
+    padding: 0 0 0 3px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+.icons{
+    font-size: 2.7rem;
+    transition: all .5s;
+}
+.icons:hover{
+    color: rgb(68, 57, 57);
+    text-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+.facebook{
+    color: rgb(17, 17, 238);
+}
+.insta{
+    color: rgb(128, 16, 81);
+}
+.pintr{
+    color: rgb(163, 19, 19);
+}
+.whatsa{
+    color: rgb(7, 71, 7);
+}
+.google{
+    color: rgb(179, 15, 15);
+}
+.youtu{
+    color: rgb(187, 10, 10);
+}
+.download_our_app{
+    margin: 40px 0 0 0;
+}
+.download_app_inner{
+    border: transparent;
+    /* border: 1px solid blue; */
+}
+
+.download_app_logo{
+    width: 30%;
+}
+.download_app_store_logo{
+    width: 24%;
+}
+
+
+
+.footer_2{
+    /* border: 1px solid black; */
+    margin: 39px 0 0 0;
+}
+.footer_2_inner{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.footer_2_p{
+    font-size: 1.6rem;
+}
+.partision_1{
+    border-right: 6px double rgba(0, 0, 0, 0.390);
+    border-radius: 10px;
+    width: 21%;
+    padding: 0 10px 0 0;
+}
+.partision_2{
+    border: none;
+}
+.partision_1_properties{
+    display: block;
+    font-size: 1.3rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+    color: black;
+    margin: 0 0 3px 0;
+}
+
+
+.footer_2_DISCLAIMER{
+    margin: 30px 20px 0 2.9%;
+    /* border: 1px solid black; */
+
+}
+.disclamer_details{
+    font-size: 1.4rem;
+    color: black;
+    font-family: "Karla";
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer_image_div{
+    width: 100%;
+}
+.footer_img{
+    width: 100%;
+}
+
+.copyright{
+    margin: 30px 0 10px 0;
+    padding: 10px 20px 10px 2.9%;
+    border-top: 7px double black;
+    border-bottom: 7px double black;
+}
+
+/* Footer End */
+
+
+
+
+/* Our Stats Query Start */
+@media(min-width: 630px) and (max-width: 970px){
+    .property_number{
+        font-size: 2.4rem;
+    }
+    .property_stat_name{
+        font-size: 1.4rem;
+        letter-spacing: 0;
+    }
+}
+@media(min-width: 0px) and (max-width: 630px){
+    .property_stat_1{
+        /* border: 1px solid black; */
+        width: 51%;
+        margin-bottom: 20px;
+    }
+    .property_number{
+        font-size: 2.4rem;
+    }
+    .property_stat_name{
+        font-size: 1.4rem;
+        letter-spacing: 0;
+    }
+}
+/* Our Stats Query End */
+
+
+/* Footer Query Start */
+@media(min-width: 800px) and (max-width: 1100px){
+    .footer_about{
+        padding: 0 10px 0 0;
+    }
+    .footer_about_heading{
+        font-size: 1.8rem;
+    }
+    .social_media_p{
+        font-size: 1.6rem;
+    }
+    .footer_about_patagraph{
+        font-size: 1.3rem;
+        line-height: 20px;
+    }
+    .icons{
+        font-size: 2.3rem;
+    }
+    .footer_social_icon{
+        width: 45%;
+        padding: 0 0 0 7%;
+    }
+}
+@media(min-width: 0px) and (max-width: 800px){
+    .footer_about{
+        width: 90%;
+        padding: 0 0px 0 0;
+    }
+    .footer_about_heading{
+        font-size: 1.8rem;
+    }
+    .social_media_p{
+        font-size: 1.6rem;
+    }
+    .footer_about_patagraph{
+        font-size: 1.3rem;
+        line-height: 20px;
+    }
+    .footer_social_icon{
+        margin: 30px 0 0 0;
+        width: 90%;
+        padding: 0 0 0 0%;
+    }
+    .social_media_icon{
+        width: 50%;
+    }
+    .icons{
+        font-size: 2.3rem;
+    }
+    .download_app_logo{
+        width: 120px;
+    }
+    .download_app_store_logo{
+        width: 95px;
+    }
+}
+
+/* Footer 2  */
+@media(min-width: 800px) and (max-width: 1100px){
+    .footer_2_p{
+        font-size: 1.4rem;
+    }
+}
+@media(min-width: 590px) and (max-width: 800px){
+    .footer_2_p{
+        font-size: 1.4rem;
+    }
+    .footer_2_inner{
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 0 0 5%;
+    }
+    .partision_1{
+        border-right: 6px double rgba(0, 0, 0, 0.390);
+        border: none;
+        border-radius: 10px;
+        width: 30%;
+    }
+    .partision_2{
+        margin: 20px 0 0 0;
+    }
+    .footer_2_DISCLAIMER{
+        margin: 30px 20px 0 4.7%;
+    }
+}
+@media(min-width: 00px) and (max-width: 590px){
+    .footer_2_p{
+        font-size: 1.4rem;
+    }
+    .footer_2_inner{
+        /* border: 1px solid black; */
+        justify-content: space-around;
+        padding: 0 0 0 5%;
+    }
+    .partision_1{
+        border: none;
+        width: 49%;
+        padding: 0;
+        margin: 0 0 25px 0;
+    }
+    .footer_2_DISCLAIMER{
+        margin: 10px 20px 0 4.7%;
+    }
+    .disclamer_details{
+        font-size: 1.3rem;
+    }
+}
+/* Footer Query End */

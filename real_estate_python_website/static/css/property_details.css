@@ -1,0 +1,357 @@
+/* Back btn, property address start */
+.back_to_property{
+    border: 4px double rgba(0, 0, 0, 0.650);
+    display: inline-block;
+    margin: 40px 0 0 7%;
+    padding: 5px 7px;
+    border-top-right-radius: 10px;
+}
+.property_title_start{
+    margin: 40px 0 0 0;
+    /* display: inline-block; */
+    /* border: 1px solid black; */
+}
+.property_details_address{
+    font-size: 1.7rem;
+}
+/* Back btn, property address end */
+
+
+/* Property details error start */
+.property_details_errors{
+    position: absolute;
+    margin: 35px 3% 0 25%;
+    /* border: 1px solid black; */
+    width: 50%;
+}
+/* Property details error end */
+
+
+
+
+/* Diplay Properties Details Start */
+.display_detail_properties_div{
+    margin: 40px 0 0px 0;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.details_first_part{
+    /* border: 1px solid black; */
+    width: 63%;
+    margin: 0 0% 0 0.5%;
+}
+.details_main_image{
+    border: 1px solid rgba(0, 0, 0, 0.700);
+    width: 85%;
+    margin: 0 0 20px 7%;
+}
+
+.small_images{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    /* width: 63%; */
+}
+.small_image_inner_div{
+    border: 1px solid rgba(0, 0, 0, 0.500);
+    display: flex;
+    align-items: center;
+    width: 16.6%;
+    margin: 0 10px;
+}
+
+
+.details_second_part{
+    width: 27%;
+    margin: 0 3% 0 0%;
+    border: 1px solid rgba(0, 0, 0, 0.250);
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 30%; */
+}
+.property_details_written{
+    /* border: 1px solid black; */
+    padding: 30px 0 0 0;
+}
+.property_details_written_1{
+    margin: 0px 0 30px 0;
+    display: block;
+    font-size: 1.5rem;
+    font-family: "karla";
+    word-spacing: 2px;  
+    padding: 0 10px 0 10px;
+}
+.property_details_writtten_2{
+    text-align: right;
+}
+/* Diplay Properties Details End */
+
+
+
+/* Display Property realtor start */
+.property_details_realtor_div{
+    margin: 40px 0 0 1.3%;
+    width: 25%;
+    border: 1px solid rgba(0, 0, 0, 0.350);
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.poprerty_realtor_img_div{
+    /* border: 1px solid black; */
+    width: 40%;
+}
+.property_Details_realtor_img{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+.property_realtor_p{
+    margin: 12px 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+.property_realtor_p_1{
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 10px 0 0 0;
+}
+.make_an_inquiry{
+    margin: 15px 0 10px 0;
+}
+/* Display Property realtor end */
+
+
+
+/* Property details description start */
+.property_details_description_div{
+    margin: 30px 0 0 1.7%;
+    width: 70%;
+}
+.property_details_description_p{
+    font-size: 1.5rem;
+    font-family: "karla";
+    word-spacing: 2px;
+    line-height: 28px;
+    text-transform: capitalize;
+}
+/* Property details description end */
+
+
+/* Inquiry Modal Start */
+.make_an_inquiry_p:focus{
+    box-shadow: none;
+}
+.inquiry_modal_main{
+    background-color: #ecf0f3;
+}
+.modal_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 20px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.678);
+}
+.modal_title{
+    font-family: "karla";
+    font-size: 1.7rem;
+}
+.modal_close{
+    font-size: 1.5rem;
+}
+
+.modal_body{
+    /* border: 1px black solid; */
+    margin: 10px 0 0 0;
+}
+.modal_property{
+    font-family: "karla";
+    font-size: 1.5rem;
+    background-color: #ecf0f3;
+    height: 35px;
+}
+.modal_property:focus{
+    background-color: #ecf0f3;
+    outline: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.600);
+    box-shadow: none;
+}
+.Modal_send{
+    background-color: rgb(19, 19, 56);
+    width: 100%;
+    height: 38px;
+    color: white;
+    font-family: "karla";
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: none;
+}
+
+/* Inquiry Modal Start */
+
+
+
+/* Back btn, property address start */
+@media(min-width: 0px) and (max-width: 835px){
+    .back_to_property{
+        margin: 40px 0 0 1%;
+    }
+    .property_details_address{
+        font-size: 1.5rem;
+    }
+}
+/* Back btn, property address end */
+
+
+
+/* Diplay Properties Details Start */
+@media(min-width: 930px) and (max-width: 1100px){
+    .details_first_part{
+        width: 60%;
+    }
+    .details_main_image{
+        width: 79%;
+        margin: 0 0 20px 10.5%;
+    }
+    
+
+    .property_details_written{
+        /* border: 1px solid black; */
+        padding: 23px 0 0 0;
+    }
+    .details_second_part{
+        width: 28%;
+        margin: 0 4% 0 0;
+    }
+    .property_details_written_1{
+        font-size: 1.3rem;
+        margin: 0 0 23px 0;
+    }
+  
+}
+@media(min-width: 0px) and (max-width: 930px){
+    .details_first_part{
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 0 0 0 0%;
+    }
+    .details_main_image{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        /* border: 1px solid black; */
+        margin: 0 0 20px 2%;
+    }
+    
+    .small_images{
+        /* border: 1px solid black; */
+        display: block;    
+        /* width: 63%; */
+        width: 30%;
+    }
+    .small_image_inner_div{
+        width: 30%;
+        margin: 0 0px 20px 35%; 
+    } 
+    
+
+   
+    .details_second_part{
+        width: 40%;
+        margin: 20px 0 0 2%;
+        justify-content: space-evenly;
+        border: 1px solid rgba(0, 0, 0, 0.678);
+    }
+    .property_details_written{
+        /* border: 1px solid black; */
+        padding: 25px 0 10px 0;
+    }
+    .property_details_written_1{
+        font-size: 1.4rem;
+        margin: 0 0 15px 0;
+    }
+  
+}
+@media(min-width: 0px) and (max-width: 680px){
+    .details_second_part{
+        width: 96%;
+        margin: 20px 0 0 2%;
+        border: none;
+        justify-content: space-between;
+        /* border: 1px solid black; */
+    }
+}
+/* Diplay Properties Details End */
+
+
+
+/* Property realtor div start */
+@media(min-width: 930px) and (max-width: 1100px){
+    .property_realtor_p{
+        font-size: 1.7rem;
+    }
+    .property_realtor_p_1{
+        font-size: 1.5rem;
+    }
+    .make_an_inquiry_p{
+        font-size: 1.4rem;
+    }
+}
+@media(min-width: 0px) and (max-width: 930px){
+    .property_details_realtor_div{
+        margin: 40px 0 0 2%;
+        border: 1px solid rgba(0, 0, 0, 0.650);
+    }
+    .property_realtor_p{
+        font-size: 1.6rem;
+    }
+    .property_realtor_p_1{
+        font-size: 1.4rem;
+    }
+    .make_an_inquiry_p{
+        font-size: 1.4rem;
+    }
+    .make_an_inquiry{
+        margin: 15px 0 10px 0;
+    }
+}
+@media(min-width: 0px) and (max-width: 680px){
+    .property_details_realtor_div{  
+        border: 1px solid rgba(0, 0, 0, 0.650);
+        margin: 30px 0 0 2%;
+        width: 30%;
+    }
+    .property_realtor_p{
+        font-size: 1.5rem;
+    }
+    .property_realtor_p_1{
+        font-size: 1.3rem;
+    }
+    .make_an_inquiry_p{
+        font-size: 1.2rem;
+    }
+    .make_an_inquiry{
+        margin: 15px 0 10px 0;
+    }
+}
+/* Property realtor div end */
+
+
+/* Property details description start */
+@media(min-width: 0px) and (max-width: 680px){
+    .property_details_description_div{
+        margin: 30px 0 0 2%;
+        width: 90%;
+    }
+    .property_details_description_p{
+        font-size: 1.3rem;
+        line-height: 26px;
+    }
+}
+/* Property details description end */

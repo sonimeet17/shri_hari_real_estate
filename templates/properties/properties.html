@@ -1,0 +1,136 @@
+{% extends 'Base_page.html' %}
+{% block title %} | Properties {% endblock%}
+{% block content %}
+{% load humanize %}
+
+{% load static %}
+<!-- Here Some classes are used from display.html Page so find them -->
+
+<!-- Breadcrump Start -->
+<main>
+    <div class="breadcrump">
+        <a class="breadcrump_a" href="{% url 'display_page' %}"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" id="home_icon" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                <path fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg> Display / </a> <a class="breadcrump_a breadcrump_a_a"> &nbsp;Browse Properties </a>
+    </div>
+</main>
+<!-- Breadcrimp End -->
+
+
+<!-- Total Properties Number Start -->
+<main>
+    <div class="breadcrump Total_Number">
+        <a class="breadcrump_a"> Total Properties: </a> <a class="breadcrump_a breadcrump_a_a"> &nbsp;{{ total_property_count }} </a>
+    </div>
+</main>
+<!-- Total Properties Number End -->
+
+
+
+<!-- short by start -->
+<div class="breadcrump short_by_div">
+    <a class="breadcrump_a short_by_a"> Short By: </a>
+    <a href="" class="breadcrump_a short_by_a"> Low To High </a>
+    <a href="" class="breadcrump_a short_by_a"> High To Low </a>
+
+</div>
+<!-- short by end -->
+
+
+
+<!-- Properties show start -->
+<main>
+    <div class="latest_properties_main_div">
+
+        <div class="latest_preoperties_inner all_properties_inner ">
+            {% if properties %}
+            {% for property in properties %}
+            <div class="first_property all_properties_first">
+                <div class="first_property_image_div properties_page_image_div">
+                    <img class="first_propery_img properties_page_image " src="{{ property.photo_main.url }}" alt="image in Process">
+                </div>
+
+                <p class="first_property_name"> {{ property.title }} </p>
+                <p class="first_property_address"> {{property.address}}, {{property.city}}, {{property.state}} </p>
+
+                <div class="first_property_features">
+                    <div class="first_property_features_one all_property_features"> Sqft:<span
+                            class="first_property_features_one_span">
+                            {{property.sqft}} </span> </div>
+                    <div class="first_property_features_one all_property_features"> Bedrooms:<span
+                            class="first_property_features_one_span">
+                            {{property.bedrooms}} </span> </div>
+                    <div class="first_property_features_one all_property_features"> Garage:<span
+                            class="first_property_features_one_span">
+                            {{property.garage}} </span> </div>
+                    <div class="first_property_features_one all_property_features"> Bathrooms:<span
+                            class="first_property_features_one_span">
+                            {{property.bathrooms}} </span> </div>
+                </div>
+
+                <div class="first_property_price_div">
+                    <a class="First_property_price"> ₹{{property.price | intcomma}}\- </a>
+                </div>
+
+                <div class="more_info_div">
+                    <a class="more_info_a" href="{% url 'property' property.id %}"> More Info </a>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p> Sorry No Properties Found</p>
+            {% endif %}
+
+
+
+        </div>
+
+    </div>
+</main>
+<!-- Properties show end -->
+
+<!-- paginator start -->
+<main>
+    <div class="pagination_main_div">
+        {% if properties.has_other_pages %}
+            <div class="pagination_main_div_inner">
+                {% if properties.has_previous %}
+                    <div class="pagination_div"> 
+                        <a href="?page={{properties.previous_page_number}}" class="pagination_a"> &laquo; </a>
+                    </div>
+                {% else %}
+                    <div class="pagination_div"> 
+                        <a class="pagination_a"> &laquo; </a>
+                    </div>
+                {% endif %}
+                {% for i in properties.paginator.page_range %}
+                    {% if properties.number == i %}
+                        <div class="pagination_div"> 
+                            <a class="pagination_a pagination_activat"> {{i}} </a>
+                        </div>
+                    {% else %}
+                        <div class="pagination_div"> 
+                            <a href="?page={{i}}" class="pagination_a"> {{i}} </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% if properties.has_next %}
+                <div class="pagination_div"> 
+                    <a href="?page={{properties.next_page_number}}" class="pagination_a"> &raquo; </a>
+                </div>
+                {% else %}
+                    <div class="pagination_div"> 
+                        <a class="pagination_a"> &raquo; </a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</main>
+<!-- paginator end -->
+
+{% endblock %}

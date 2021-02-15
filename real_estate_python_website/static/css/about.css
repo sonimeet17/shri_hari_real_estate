@@ -1,0 +1,329 @@
+/* Breadcrump Start */
+.breadcrump{
+    display: flex;
+    align-items: center;
+    width: 86%;
+    /* height: 35px; */
+    margin: 40px 0 0 7%;
+    padding: 7px 0 7px 2%;
+    border: 5px double rgba(0, 0, 0, 0.46);
+    border-top: none;
+    border-right: none;
+    border-radius: 5px;
+}
+#home_icon{
+    margin: -5px 0 0 0;
+}
+.breadcrump_a{
+    font-size: 1.6rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+    /* letter-spacing: 1px; */
+    color: black;
+}
+.breadcrump_a_a{
+    color: rgba(0, 0, 0, 0.685);
+}
+/* Breadcrump End */
+
+
+/* About Haeading Start */
+.about_heading{
+    /* border: 1px solid black; */
+    text-align: center;
+    width: 85%;
+    margin: 60px 0 0px 7.5%;
+}
+.about_heading_para{
+    margin: 40px 0 0 0;
+    font-size: 1.5rem;
+    font-family: "Karla";
+    word-spacing: 2px;
+    line-height: 26px;
+    /* letter-spacing: 1px; */
+    color: black;
+}
+/* About Haeading End */
+
+
+/* Fast Facts Start */
+.fast_facts{
+   /* border: 1px solid black; */
+   width: 85%;
+   margin: 60px 0 0px 7.5%;
+   
+}
+.fast_facts_inner{
+    margin: 30px 0 0 0;
+}
+.fast_facts_a{
+    display: block;
+    margin: 0;
+    line-height: 30px;
+    color: rgba(0, 0, 0, 0.75);
+}
+.fast_facts_a:hover{
+    color: rgba(0, 0, 0, 0.750);
+}
+.bi-diamond{
+    margin: -2px 0 0 0;
+}
+/* Fast Facts End */
+
+
+/* We work for you start */
+.we_work_for_you{
+    margin: 60px 0 0 0;
+    padding: 30px 3% 20px 3%;
+    /* height: 300px; */
+    background: linear-gradient(to right, rgba(69, 82, 10, 0.329) 50%,  rgba(133, 55, 55, 0.486) 95%);
+    text-align: center;
+}
+.we_work_p_quotes{
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-transform: capitalize;
+}
+.we_work_for_you_div{
+    /* border: 1px solid black; */
+    margin: 45px 0 0 0;
+}
+.we_work_for_you_btn{
+    border: 1px solid black;
+    border-top: none;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 9px 10px 7px 10px;
+}
+.we_work_a_btn{
+    font-size: 1.8rem;
+    font-family: "Acme";
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    color: black;
+    transition: all .7s;
+    padding: 0 0 5px 0;
+}
+.we_work_a_btn:hover{
+    color: black;
+    border-bottom: 1px solid black;
+}
+/* We work for you end */
+
+
+/* Our Team Start */
+.our_team{
+    /* border: 1px solid black; */
+    margin: 60px 0 0 0;
+}
+.our_team_inner{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 40px 0 0 0;
+}
+.our_team_member_one{
+    /* border: 1px solid black; */
+    width: 29%;
+    text-align: center;
+}
+.our_member_one_img_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 15px 0;
+    /* border: 1px solid black; */
+    /* height: 120px; */
+    width: 100%;
+}
+.member_img_div{
+    width: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.822);
+    border-radius: 20px;
+    display: inline-block;
+}
+.our_member_one_img{
+    width: 100%;
+}
+.member_name{
+    font-size: 1.9rem;
+    font-family: "Acme";
+    color: rgba(0, 0, 0, 0.850);
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.member_phone{
+    font-size: 1.7rem;
+}
+.bi-award{
+    margin: -8px 0 0 0;
+}
+.bi-phone{
+    margin: -7px 0 0 0;
+}
+.bi-envelope{
+    margin: -6px 0 0 0;
+}
+/* Our Team End */
+
+
+
+/* Seller Of The Month start */
+.realtor_of_month{
+    margin: 60px 0 0 3%;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+.seller_of_head{
+    text-align: left;
+}
+.seller_under{
+    justify-content: flex-start;
+}
+.seller_of_the_month_inner{
+    margin: 20px 0 0 3px;
+    width: 25%;
+    border: 6px double rgba(0, 0, 0, 0.700);
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0 5px;
+}
+.seller_of_img_div{
+    margin: 20px 0 10px 0;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+.seller_of_img_div_inner{
+    /* border: 1px solid black; */
+    width: 40%;
+}
+.seller_quotes{
+    margin: 0 0 0 0;
+}
+/* Seller of The Month end */
+
+
+
+/* Breadcrump Start */
+@media(min-width: 0) and (max-width: 835px){
+    .breadcrump{
+        margin: 100px 0 0 1%;
+        width: 98%;
+    }
+    .breadcrump_a{
+        font-size: 1.4rem;
+    }
+}
+/* Breadcrump End */
+
+
+/* About Haeading Start */
+@media(min-width: 600px) and (max-width: 1100px){
+    .about_heading_para{
+        margin: 30px 0 0 0;
+        font-size: 1.4rem;
+        line-height: 25px;
+    }
+}
+@media(min-width: 0px) and (max-width: 600px){
+    .about_heading_para{
+        margin: 30px 0 0 0;
+        font-size: 1.3rem;
+        line-height: 24px;
+    }
+}
+/* About Haeading End */
+
+
+/* fast facts query start */
+@media(min-width: 0px) and (max-width: 1100px){
+    .fast_facts_a{
+        margin: 0;
+        line-height: 28px;
+    }
+}
+/* fast facts quety end */
+
+
+
+/* We work for you query start */
+@media(min-width: 600px) and (max-width: 1100px){
+    .we_work_for_you_btn{
+        padding: 5px 7px 5px 7px;
+    }
+    .we_work_a_btn{
+        font-size: 1.6rem;
+    }
+}
+@media(min-width: 0px) and (max-width: 600px){
+    .we_work_for_you_btn{
+        padding: 5px 5px 5px 5px;
+    }
+    .we_work_a_btn{
+        font-size: 1.4rem;
+    }
+}
+/* We work for you query end */
+
+
+/* Our Team start */
+@media(min-width: 800px) and (max-width: 1100px){
+    .member_img_div{
+        width: 33%;
+    }
+    .member_name{
+        font-size: 1.7rem;
+    }
+    .member_phone{
+        font-size: 1.5rem;
+    }
+}
+@media(min-width: 700px) and (max-width: 800px){
+    .member_img_div{
+        width: 33%;
+    }
+    .member_name{
+        font-size: 1.5rem;
+    }
+    .member_phone{
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 00px) and (max-width: 700px){
+    .our_team_member_one{
+        /* border: 1px solid black; */
+        width: 80%;
+        margin: 0 0 30px 0;
+    }
+    .member_img_div{
+        width: 20%;
+    }
+    .member_name{
+        font-size: 1.5rem;
+    }
+    .member_phone{
+        font-size: 1.3rem;
+    }
+}
+/* Our Team end */
+
+
+/* Seller Of The Month start */
+@media(min-width: 800px) and (max-width: 1100px){
+    .seller_quotes{
+        margin: 0;
+    }
+}
+@media(min-width: 0px) and (max-width: 800px){
+    .seller_of_the_month_inner{
+        width: 35%;
+    }
+    .seller_quotes{
+        margin: 0;
+    }
+}
+/* Seller Of The Month end */

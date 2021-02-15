@@ -1,0 +1,92 @@
+{% load static %}
+
+<div class="main_navbar">
+    <div class="navbar_btn_div">
+            <a {% if '/' == request.path %}
+                   class="navbar_active"
+                {% else %}
+                   class="navbar_btn"
+                {% endif %} href="{% url 'display_page' %}"  > Display </a>
+        
+            <a {% if 'about' in request.path %}
+                   class="navbar_active"
+                {% else %}
+                   class="navbar_btn"
+                {% endif %} href="{% url 'about' %}"> About </a>
+
+            <a {% if 'properties' in request.path %}
+                   class="navbar_active"
+                {% else %}
+                   class="navbar_btn"
+                {% endif %} href="{% url 'properties' %}"> Properties </a>
+                
+       
+    </div>
+
+    <div class="navbar_logo_div">
+        <a href="{% url 'display_page' %}"> <img class="logo_img" src="{% static 'img/Short_logo.png' %}" alt="Image in Process"> </a>
+        <a class="logo_name" href="{% url 'display_page' %}"> Shri Hari Real Estate </a>
+    </div>
+
+    <div class="navbar_btn_div">
+         {% if user.is_authenticated %}
+            <a {% if 'dashboard' in request.path %}
+               class="navbar_active"
+            {% else %}
+               class="navbar_btn"
+            {% endif %} href="{% url 'dashboard' %}"> Hi, {{ user.first_name}} </a>
+
+            <a class="navbar_btn" href="javascript:{document.getElementById('logout').submit()}"> Logout </a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+               {% csrf_token %}
+               <input type="hidden">   
+            </form>
+
+            <a  class="navbar_btn"> &nbsp; </a>
+         {% else %}
+            <a {% if 'Blogs' in request.path %}
+                     class="navbar_active"
+                  {% else %}
+                     class="navbar_btn"
+                  {% endif %} href=""> Blogs </a>
+
+            <a {% if 'register' in request.path %}
+                     class="navbar_active"
+                  {% else %}
+                     class="navbar_btn"
+                  {% endif %} href="{% url 'register' %}"> Register </a>
+
+            <a {% if 'login' in request.path %}
+                     class="navbar_active"
+                  {% else %}
+                     class="navbar_btn"
+                  {% endif %} href="{% url 'login' %}"> Login </a>
+         {% endif %}
+    </div>
+</div>
+
+<div class="blank_div">
+   
+</div>
+
+
+<div class="responsive_dropdown">  
+   <a href="{% url 'display_page' %}"> <img class="logo_img_responsive" src="{% static 'img/Short_logo.png' %}" alt="Image in Process"> </a>
+ 
+   <div class="dropdown res_dropdown">
+      <button class="btn dropdown_btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+         </svg>
+      </button>
+      <ul class="dropdown-menu drop_down_list dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href="{% url 'display_page' %}"> Display</a></li>
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href="{% url 'about' %}"> About </a></li>
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href="{% url 'properties' %}"> Properties </a></li>
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href=""> Blogs </a></li>
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href="{% url 'register' %}"> Register </a></li>
+      <li><a class="dropdown-item navbar_btn nav_btn_resp" href="{% url 'login' %}"> Login </a></li>
+      </ul>
+   </div>
+   
+</div>

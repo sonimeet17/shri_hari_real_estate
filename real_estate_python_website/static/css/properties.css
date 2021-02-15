@@ -1,0 +1,114 @@
+.all_properties_inner{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 0.5% 0 0.5%;
+}
+.all_properties_first{
+    width: 25%;
+    margin: 0 4% 40px 4%;
+}
+
+.properties_page_image_div{
+    border-bottom: 1px solid black;
+}
+
+
+
+/* Short by start */
+.short_by_div{
+    /* border: 1px solid transparent; */
+    display: flex;
+    justify-content: flex-end;
+}
+.short_by_a{
+    text-align: center;
+}
+/* Short by end */
+
+
+
+/* Pagination Start */
+.pagination_main_div{
+    margin: 10px 0 0 0;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+.pagination_main_div_inner{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+.pagination_div{
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.726);
+    margin: 0 10px; 
+    width: 36px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination_a{
+    font-size: 1.5rem;
+    color: black;
+    font-family: "Karla";
+}
+.pagination_activat{
+    color: rgba(177, 28, 28, 0.952);
+}
+/* Pagination End */
+
+
+/* Total Number Query Start, Its parent query is in about.css */
+@media(min-width: 0) and (max-width: 835px){
+    .Total_Number{
+        margin: 30px 0 0 1%;
+    }    
+}
+
+
+
+/* Show all properties start */
+@media(min-width: 800px) and (max-width: 900px){
+    .all_properties_inner{
+        /* border: 1px solid black; */
+        padding: 0 0.5% 0 0.5%;
+    }    
+    .all_properties_first{
+        width: 27%;
+        margin: 0 3% 40px 3%;
+    }
+}
+
+@media(min-width: 600px) and (max-width: 800px){
+    .all_properties_inner{
+        /* border: 1px solid black; */
+        padding: 0 0% 0 0%;
+    }    
+    .all_properties_first{
+        width: 42%;
+        margin: 0 4% 40px 4%;
+    }
+}
+
+@media(min-width: 00px) and (max-width: 600px){
+    .all_properties_inner{
+        /* border: 1px solid black; */
+        padding: 0 0% 0 0%;
+    }    
+    .all_properties_first{
+        width: 60%;
+        margin: 0 20% 40px 20%;
+    }
+    .all_property_features{
+        width: 90%;
+        margin: 0 0 10px 5%;
+        /* border: 1px solid black; */
+    }
+}
+/* show all properies end */

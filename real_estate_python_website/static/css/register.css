@@ -1,0 +1,117 @@
+.register_form{
+    width: 35%;
+    margin: 60px 0 0 32.5%;
+    border-radius: 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 6px double rgba(0, 0, 0, 0.700);
+    border-top: none;
+}
+.register_form_name_div{
+    transform: translate(-0px, -15px);
+    border: 1px solid transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* border-radius: 5px; */
+    background-color: rgb(11, 11, 56);
+    padding: 10px 0 0px 12px;
+    margin: 0 5px 10px 5px;
+}
+.register_form_name{
+    font-size: 1.5rem;
+    font-family: "Acme";
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.first_name{
+    width: 90%;
+    margin: 0px 0 27px 5%;
+    height: 32px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-family: "karla";
+    word-spacing: 1px;
+    padding: 0 5px;
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+.first_name:focus{
+    outline: none;
+    border: 1px solid black;
+}
+
+
+/* Register error start */
+.close_container{
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px 5px rgba(255, 0, 0, 0.100);
+    width: 90%;
+    margin: 0 0 27px 5%;
+    padding: 14px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 0, 0, 0.171);
+}
+.close_container_p{
+    font-family: "karla";
+    font-size: 1.4rem;
+}
+/* Register error end */
+
+
+
+@media(min-width: 0) and (max-width: 1100px){
+    .register_form{
+        width: 40%;
+        margin: 60px 0 0 30%;
+    }
+    .register_form_name{
+        font-size: 1.3rem;
+    }
+    .first_name{
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 650px) and (max-width: 835px){
+    .register_form{
+        width: 50%;
+        margin: 140px 0 0 25%;
+    }
+    .register_form_name{
+        font-size: 1.3rem;
+    }
+    .first_name{
+        font-size: 1.4rem;
+    }
+
+
+    .close_container{
+        padding: 11px 8px;
+    }
+    .close_container_p{
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 0) and (max-width: 650px){
+    .register_form{
+        width: 70%;
+        margin: 140px 0 0 15%;
+    }
+    .register_form_name{
+        font-size: 1.3rem;
+    }
+    .first_name{
+        font-size: 1.4rem;
+    }
+
+    .close_container{
+        padding: 11px 8px;
+    }
+    .close_container_p{
+        font-size: 1.3rem;
+    }
+}

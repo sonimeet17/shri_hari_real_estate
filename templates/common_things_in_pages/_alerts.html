@@ -1,0 +1,23 @@
+{% if messages %}
+    {% for message in messages %}
+    <div class="close_container">
+        <div class="close_container_inner" >
+            <a class="close_container_p">  
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    Error:
+                {% else %}
+                    {{ message.tags|title }}
+                {% endif %}
+            </a> 
+           <a class="close_container_p"> {{ message }} </a>
+       
+        </div>
+        <a draggable="true" > <span class="close"> &times; </span>  </a>
+    </div>
+    {% endfor %}
+{% endif %}
+
+
+
+
+

@@ -1,0 +1,36 @@
+{% extends 'Base_page.html' %}
+{% block title %} | Registration {% endblock %}
+{% block content %}
+{% load humanize %}
+
+
+{% load static %}
+
+
+
+<div class="register_form">
+    <div class="register_form_name_div">
+        <p class="register_form_name"> <i class="fa fa-user register_user_icon" aria-hidden="true"></i> Register </p>
+    </div>
+    <!-- alerts -->
+    {% include 'common_things_in_pages/_alerts.html' %}
+    <!-- alerts end -->
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %} 
+        <input type="text" name="first_name" class="first_name" required placeholder="First Name"> 
+        <input type="text" name="last_name" class="first_name" required placeholder="Last Name"> 
+        <input type="text" name="username" class="first_name" required placeholder="Username"> 
+        <input type="email" name="email" class="first_name" required placeholder="Email"> 
+        <input type="password" name="password" class="first_name" required placeholder="Password">
+        <input type="password" name="password2" class="first_name" required placeholder="Password">
+
+        <input type="submit" value="Register" class="first_name">
+
+    </form>  
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+/* font-family: 'Baloo Tamma 2', cursive; */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #ecf0f3;
+    overflow-x: hidden;
+}
+
+a:hover{
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 12px;
+    /* border: 1px solid black; */
+    border-left: 1px double rgba(0, 0, 0, 0.822);
+}
+
+::-webkit-scrollbar-button{
+    height: 0;
+    border: 1px solid black;
+}
+::-webkit-scrollbar-thumb{
+    border-right: 1px solid #ecf0f3;
+    border-left: 1px solid black;
+    background-color: rgb(31, 42, 51);
+}
+
+@media(min-width: 0) and (max-width: 600px){
+    ::-webkit-scrollbar{
+        width: 0px;
+    }
+}
